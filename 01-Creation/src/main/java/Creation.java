@@ -5,8 +5,15 @@ public class Creation {
             @Override
             public void run() {
                 System.out.println("Started thread. Current thread:" + Thread.currentThread().getName());
+                System.out.println("Current thread priority:" + Thread.currentThread().getPriority());
             }
         });
+
+        // Setting thread names is helpful for debugging
+        thread.setName("New Worker Thread");
+
+        // We can change thread priority (default is Thread.NORM_PRIORITY)
+        thread.setPriority(Thread.MAX_PRIORITY);
 
         System.out.println("Before starting new thread. Current thread:" + Thread.currentThread().getName());
         thread.start();
