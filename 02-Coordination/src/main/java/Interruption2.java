@@ -29,8 +29,8 @@ public class Interruption2 {
 
             for (BigInteger i = BigInteger.ZERO; i.compareTo(power) != 0; i = i.add(BigInteger.ONE)) {
 
-                // In computation tasks we have to constantly check if the current thread is interrupted
-                // and manually stop computations in this case.
+                // In computation tasks we have to constantly check if the current thread
+                // has received interrupt signal and manually stop computations in this case.
                 if (Thread.currentThread().isInterrupted()) {
                     System.out.println("Interrupted computation");
                     return BigInteger.ZERO;

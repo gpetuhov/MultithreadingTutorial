@@ -17,9 +17,11 @@ public class Interruption {
         @Override
         public void run() {
             try {
+                // Thread.sleep() responds to the interrupt signal and throws InterruptedException,
+                // so we don't have to check for interrupt signal ourselves.
                 Thread.sleep(500000);
             } catch (InterruptedException e) {
-                // InterruptedException is thrown if interrupt() method of a thread is called
+                // We just have to catch InterruptedException and handle interruption here
                 System.out.println("Exiting blocking thread");
             }
         }
