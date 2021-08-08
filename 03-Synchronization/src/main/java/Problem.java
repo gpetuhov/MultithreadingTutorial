@@ -23,6 +23,7 @@ public class Problem {
         thread2.join();
 
         // Result will always be different
+        // (this is called Race Condition)
         System.out.println(counter.getCounter());
     }
 
